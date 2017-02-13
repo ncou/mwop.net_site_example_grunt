@@ -15,6 +15,11 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 use Zend\Stratigility\Middleware\OriginalMessages;
 
 return ['dependencies' => [
+    'delegators' => [
+        Application::class => [
+            Factory\PipelineRoutesFactory::class,
+        ],
+    ],
     'factories' => [
         'mail.transport'                  => Factory\MailTransport::class,
         'session'                         => Factory\Session::class,
